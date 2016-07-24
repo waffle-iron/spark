@@ -7,6 +7,8 @@ gulp.task("typings:browser", (cb) => {
     installTypings(path.join(__dirname, "src", "browser"), cb);
 });
 
+gulp.task("typings", gulp.parallel("typings:browser"));
+
 function installTypings(typingsConfigPath, cb) {
     console.log("Platform: " + process.platform);
     console.log("Typings path: " + typingsConfigPath);
